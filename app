@@ -1,11 +1,11 @@
 /* ============================================================
    clerk.tax — спільний скрипт
-   ЄДИНЕ МІСЦЕ, ДЕ ТРЕБА ВСТАВИТИ КЛЮЧ SUPABASE
-   Візьміть anon key той самий, що на brokservisavto.com
+   Ключ Supabase уже вписано. Це публічний anon key — він і має
+   бути видимим у коді; доступ обмежується політиками RLS у Supabase.
    ============================================================ */
 const CFG = {
   SUPABASE_URL: 'https://rhduokjaawmorcyiuviy.supabase.co',
-  SUPABASE_ANON_KEY: 'ВСТАВТЕ_ANON_KEY_СЮДИ',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJoZHVva2phYXdtb3JjeWl1dml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NDE1NDgsImV4cCI6MjA5NjQxNzU0OH0.usjLWtdJW0OJt8dgUfCnkVljKN6kpG7vJ907Y_XWieg',
   TABLE: 'leads',
   SOURCE: 'clerk.tax',
   STAGE: 'Новий лід',
@@ -121,7 +121,7 @@ function initLeadForm(){
       phone:  phone.value.trim(),
       email:  (document.getElementById('f-email')?.value || '').trim() || null,
       service: svcEl ? svcEl.value : 'Бухгалтерський облік',
-      comment: [
+      notes: [
         bizEl ? 'Тип бізнесу: ' + bizEl.value : '',
         'Сторінка: ' + pageTag,
         msgEl ? msgEl.value.trim() : ''
