@@ -1,0 +1,33 @@
+# =====================================================================
+# clerk.tax — 301 з .html на чисті адреси
+#
+# Знак ! обов'язковий: без нього Netlify віддасть існуючий файл
+# і редирект не спрацює.
+#
+# Файл кладеться в корінь репозиторію, поруч з index.html.
+# Назва — рівно _redirects, без розширення.
+#
+# УВАГА: google8743c32d250e7e87.html навмисно НЕ включений —
+# це файл підтвердження Google Search Console. Редирект на нього
+# зламає підтвердження права власності на сайт.
+# =====================================================================
+
+/index.html                        /                             301!
+
+# --- Послуги ---
+/vidnovlennya-obliku.html          /vidnovlennya-obliku          301!
+/zarplatnyi-oblik.html             /zarplatnyi-oblik             301!
+/buhgalter-dlya-fop.html           /buhgalter-dlya-fop           301!
+/buhgalterskyi-oblik-tov.html      /buhgalterskyi-oblik-tov      301!
+/podatkove-planuvannya.html        /podatkove-planuvannya        301!
+/yurydychnyi-suprovid.html         /yurydychnyi-suprovid         301!
+/reyestratsiya-biznesu.html        /reyestratsiya-biznesu        301!
+
+# --- Блог ---
+/blog.html                         /blog                         301!
+/blog-fop-chy-tov.html             /blog-fop-chy-tov             301!
+/blog-reyestratsiya-pdv.html       /blog-reyestratsiya-pdv       301!
+/blog-shtrafy-za-zvitnist.html     /blog-shtrafy-za-zvitnist     301!
+
+# --- Інше ---
+/polityka-konfidentsiynosti.html   /polityka-konfidentsiynosti   301!
