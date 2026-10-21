@@ -330,10 +330,12 @@ footer{background:var(--navy);padding:3rem;border-top:1px solid rgba(200,169,110
 <li><a href="/zarplatnyi-oblik">Кадровий облік і зарплата</a></li>
 <li><a href="/reyestratsiya-biznesu">Реєстрація ТОВ та ФОП</a></li>
 <li><a href="/vidnovlennya-obliku">Відновлення обліку та аудит</a></li>
-<li><a href="/yurydychnyi-suprovid">Юридичний супровід бізнесу</a></li></ul></div></li>
-    <li><a href="#pricing">Тарифи</a></li>
+<li><a href="/yurydychnyi-suprovid">Юридичний супровід бізнесу</a></li>
+<li><a href="/dia-city">Супровід резидентів Дія.City</a></li></ul></div></li>
+    <li><a href="/#pricing">Тарифи</a></li>
+    <li><a href="/kalkulyator-podatkiv-fop">Калькулятор ФОП</a></li>
     <li><a href="/blog">Блог</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="/#faq">FAQ</a></li>
     <li><a href="#contact">Контакти</a></li>
   </ul>
   <a class="nav-cta" href="#contact">Консультація</a>
@@ -351,8 +353,10 @@ footer{background:var(--navy);padding:3rem;border-top:1px solid rgba(200,169,110
 <a href="/reyestratsiya-biznesu" onclick="closeDrawer()">Реєстрація ТОВ та ФОП</a>
 <a href="/vidnovlennya-obliku" onclick="closeDrawer()">Відновлення обліку та аудит</a>
 <a href="/yurydychnyi-suprovid" onclick="closeDrawer()">Юридичний супровід бізнесу</a>
+<a href="/dia-city" onclick="closeDrawer()">Супровід резидентів Дія.City</a>
   <div class="drawer-sep"></div>
-  <a href="#pricing" onclick="closeDrawer()">Тарифи</a>
+  <a href="/#pricing" onclick="closeDrawer()">Тарифи</a>
+  <a href="/kalkulyator-podatkiv-fop" onclick="closeDrawer()">Калькулятор податків ФОП</a>
   <a href="/blog" onclick="closeDrawer()">Блог</a>
   <a class="drawer-cta" href="#contact" onclick="closeDrawer()">Консультація</a>
 </div>
@@ -398,6 +402,7 @@ footer{background:var(--navy);padding:3rem;border-top:1px solid rgba(200,169,110
   <tr><td>3 група</td><td>5 % доходу (без ПДВ) або 3 % доходу + ПДВ</td><td>1 % доходу</td></tr>
   <tr><td>Загальна система</td><td>18 % ПДФО з чистого доходу</td><td>5 % чистого доходу</td></tr>
 </table></div>
+<p>Хочете одразу побачити суму для свого доходу — скористайтесь <a href="/kalkulyator-podatkiv-fop">калькулятором податків ФОП 2026</a>: він порівнює всі групи і загальну систему.</p>
 <p>Плюс <strong>ЄСВ «за себе» — 1 902,34 грн на місяць</strong> (22 % від мінімальної зарплати), або 5 707,02 грн за квартал. Ця сума однакова для всіх груп і не залежить від доходу.</p>
 <p>Разом фіксовані платежі: ФОП 1 групи — 3 099,84 грн на місяць (37 198,08 грн за рік), ФОП 2 групи — 4 496,44 грн на місяць (53 957,28 грн за рік). Ставки єдиного податку для 1 і 2 груп встановлюють місцеві ради, тому в окремих громадах вони нижчі за максимум — варто перевірити рішення своєї ради.</p>
 
@@ -446,7 +451,7 @@ footer{background:var(--navy);padding:3rem;border-top:1px solid rgba(200,169,110
   <div class="inner">
     <p class="sec-tag">Ще послуги</p>
     <h2 class="sec-title">Що ще ми робимо</h2>
-    <div class="rel-grid"><a class="rel-card" href="/buhgalterskyi-oblik-tov"><strong>Бухгалтерський облік для ТОВ</strong><span>Первинка, ПДВ, прибуток, фінзвітність — від ₴3 900/міс.</span></a><a class="rel-card" href="/podatkove-planuvannya"><strong>Податкове планування та звітність</strong><span>Декларації, реєстрація ПДВ, супровід перевірок ДПС.</span></a><a class="rel-card" href="/zarplatnyi-oblik"><strong>Кадровий облік і зарплата</strong><span>Кадровий облік, зарплата, ЄСВ і звітність — від ₴200 за працівника.</span></a></div>
+    <div class="rel-grid"><a class="rel-card" href="/buhgalterskyi-oblik-tov"><strong>Бухгалтерський облік для ТОВ</strong><span>Первинка, ПДВ, прибуток, фінзвітність — від ₴4 900/міс.</span></a><a class="rel-card" href="/podatkove-planuvannya"><strong>Податкове планування та звітність</strong><span>Декларації, реєстрація ПДВ, супровід перевірок ДПС.</span></a><a class="rel-card" href="/zarplatnyi-oblik"><strong>Кадровий облік і зарплата</strong><span>Кадровий облік, зарплата, ЄСВ і звітність — від ₴300 за працівника.</span></a></div>
   </div>
 </section>
 <section class="cta-band" id="contact">
@@ -494,6 +499,7 @@ footer{background:var(--navy);padding:3rem;border-top:1px solid rgba(200,169,110
       <option >Реєстрація бізнесу</option>
       <option >Аудит / відновлення обліку</option>
       <option >Юридичний супровід</option>
+      <option >Супровід Дія.City</option>
       <option >Весь комплекс послуг</option>
     </select>
   </div>
@@ -525,15 +531,17 @@ footer{background:var(--navy);padding:3rem;border-top:1px solid rgba(200,169,110
 <li><a href="/reyestratsiya-biznesu">Реєстрація ТОВ та ФОП</a></li>
         <li><a href="/vidnovlennya-obliku">Відновлення обліку</a></li>
         <li><a href="/yurydychnyi-suprovid">Юридичний супровід</a></li>
+        <li><a href="/dia-city">Супровід Дія.City</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h2>Компанія</h2>
       <ul>
         <li><a href="/">Головна</a></li>
-        <li><a href="#pricing">Тарифи</a></li>
+        <li><a href="/#pricing">Тарифи</a></li>
         <li><a href="/blog">Блог</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="/kalkulyator-podatkiv-fop">Калькулятор податків ФОП</a></li>
+        <li><a href="/#faq">FAQ</a></li>
         <li><a href="/polityka-konfidentsiynosti">Політика конфіденційності</a></li>
       </ul>
     </div>
