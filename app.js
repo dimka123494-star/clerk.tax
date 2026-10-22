@@ -45,7 +45,7 @@ function trackCall(){
 }
 function trackLead(service){
   if(typeof gtag === 'function'){
-    gtag('event','conversion',{send_to: CFG.AW_ID});
+    gtag('event','conversion',{send_to: CFG.AW_ID + '/K4vRCNbZ26UdEJq3-NhD'});
     gtag('event','generate_lead',{event_category:'form', event_label: service || '', value:1, currency:'UAH'});
   }
 }
