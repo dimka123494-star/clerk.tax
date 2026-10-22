@@ -41,7 +41,10 @@ function closeDrawer(){
 
 /* ---------- Аналітика ---------- */
 function trackCall(){
-  if(typeof gtag === 'function') gtag('event','phone_click',{event_category:'contact'});
+  if(typeof gtag === 'function'){
+    gtag('event','conversion',{send_to: CFG.AW_ID + '/5GutCNnZ26UdEJq3-NhD'});
+    gtag('event','phone_click',{event_category:'contact'});
+  }
 }
 function trackLead(service){
   if(typeof gtag === 'function'){
@@ -179,4 +182,14 @@ function initNavScroll(){
 document.addEventListener('DOMContentLoaded', function(){
   initLeadForm();
   initNavScroll();
+});
+
+/* ---------- Конверсія «Контакт» для месенджерів ---------- */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href]');
+  if(!a) return;
+  var h = a.getAttribute('href') || '';
+  if(/^(https:\/\/t\.me|viber:|https:\/\/wa\.me|https:\/\/api\.whatsapp)/i.test(h) && typeof gtag === 'function'){
+    gtag('event','conversion',{send_to: CFG.AW_ID + '/5GutCNnZ26UdEJq3-NhD'});
+  }
 });
