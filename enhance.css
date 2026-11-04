@@ -1,0 +1,45 @@
+/* enhance.css — спільні доповнення для всіх сторінок clerk.tax */
+/* Коротка форма під першим екраном */
+section.qf-band{padding:0!important;}
+.qf-band{background:#fff;border-bottom:1px solid var(--border-light,rgba(0,0,0,.08))}
+.qf-inner{max-width:1100px;margin:0 auto;padding:1.4rem 1.5rem;display:grid;grid-template-columns:1fr 1.5fr;gap:.6rem 1.5rem;align-items:center}
+.qf-text b{display:block;font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy,#0f1e35)}
+.qf-text span{font-size:.86rem;color:var(--text-muted,#5f6b7a)}
+.qf-form{display:grid;grid-template-columns:1fr 1fr auto;gap:.6rem}
+.qf-form input{border:1px solid rgba(15,30,53,.18);border-radius:10px;padding:.8rem .9rem;font:inherit;font-size:.95rem;background:#fff;color:#1a1a2e;min-width:0}
+.qf-form input.invalid{border-color:#d9534f}
+.qf-form button{background:var(--gold,#c8a96e);color:var(--navy,#0f1e35);border:0;border-radius:10px;padding:.8rem 1.2rem;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+.qf-form button:disabled{opacity:.6}
+.qf-msg{grid-column:2;font-size:.88rem}
+.qf-msg.ok{color:#1d7a4f;font-weight:500}
+.qf-msg.err{color:#c0392b}
+.qf-msg a{color:inherit}
+.qf-alt{grid-column:2;font-size:.82rem;color:var(--text-muted,#5f6b7a)}
+.qf-alt a{color:var(--navy,#0f1e35);font-weight:500}
+@media(max-width:760px){
+  .qf-inner{grid-template-columns:1fr;padding:1.2rem 1rem}
+  .qf-form{grid-template-columns:1fr}
+  .qf-msg,.qf-alt{grid-column:1}
+}
+/* Велика форма: додаткові поля згорнуті */
+.cf-more{margin:.2rem 0 1rem}
+.cf-more summary{cursor:pointer;color:var(--gold,#c8a96e);font-size:.9rem;font-weight:500;list-style:none;padding:.4rem 0}
+.cf-more summary::-webkit-details-marker{display:none}
+.cf-more summary::before{content:'+ '}
+.cf-more[open] summary::before{content:'− '}
+.cf-more summary span{opacity:.7;font-weight:400}
+.cf-more-body{margin-top:.6rem}
+/* Таблиці цін на телефоні — картками */
+@media(max-width:640px){
+  .tbl-wrap{overflow:visible!important}
+  table.ptable-cards,table.ptable-cards tbody,table.ptable-cards tr,table.ptable-cards td{display:block;width:100%}
+  table.ptable-cards thead,table.ptable-cards tr:first-child:has(th){display:none}
+  table.ptable-cards tr{border-bottom:1px solid var(--border-light,rgba(0,0,0,.08));padding:.7rem 1rem}
+  table.ptable-cards tr:last-child{border-bottom:0}
+  table.ptable-cards td{border:0!important;padding:.15rem 0!important;white-space:normal!important}
+  table.ptable-cards td[data-label]:not(:first-child)::before{content:attr(data-label) ': ';color:var(--text-muted,#5f6b7a);font-weight:400;font-size:.8rem}
+  table.ptable-cards td:first-child{font-size:1rem}
+  table.ptable-cards td:last-child{font-size:1rem}
+}
+/* Кнопка Viber серед плаваючих */
+.fc-viber{background:#7360F2;color:#fff}
