@@ -1,0 +1,121 @@
+# Адмінка блогу clerk.tax (Decap CMS)
+# Вхід — через GitHub. Кожна публікація = коміт у main → Netlify сам перебудовує сайт.
+backend:
+  name: github
+  repo: dimka123494-star/clerk.tax
+  branch: main
+  commit_messages:
+    create: "Блог: нова стаття «{{slug}}»"
+    update: "Блог: оновлено «{{slug}}»"
+    delete: "Блог: видалено «{{slug}}»"
+    uploadMedia: "Блог: зображення {{path}}"
+    deleteMedia: "Блог: видалено зображення {{path}}"
+
+site_url: https://clerk.tax
+display_url: https://clerk.tax
+locale: uk
+
+media_folder: images/blog
+public_folder: /images/blog
+
+collections:
+  - name: blog
+    label: Статті блогу
+    label_singular: статтю
+    description: "Після «Опублікувати» стаття з'явиться на clerk.tax/blog за 1–2 хвилини."
+    folder: content/blog
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    summary: "{{date | date('DD.MM.YYYY')}} — {{title}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - { label: "Чернетки", field: draft, pattern: true }
+    fields:
+      - label: "Заголовок для Google (title)"
+        name: title
+        widget: string
+        hint: "До ~60 символів, з ключовими словами. Показується у вкладці браузера та в пошуку."
+
+      - label: "Адреса сторінки"
+        name: slug
+        widget: string
+        pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Лише латиниця в нижньому регістрі, цифри й дефіси, напр. zminy-pdv-2027"]
+        hint: "Стаття буде за адресою clerk.tax/blog-<адреса>. Після публікації краще не змінювати."
+
+      - label: "Заголовок на сторінці (H1)"
+        name: h1
+        widget: string
+        required: false
+        hint: "Якщо порожньо — береться заголовок для Google."
+
+      - label: "Опис для Google (description)"
+        name: description
+        widget: text
+        hint: "1–2 речення, до ~160 символів."
+
+      - label: "Підзаголовок під H1"
+        name: lead
+        widget: text
+        required: false
+        hint: "Якщо порожньо — береться опис для Google."
+
+      - label: "Короткий опис для картки в /blog"
+        name: excerpt
+        widget: text
+        required: false
+
+      - label: "Коротка назва (хлібні крихти)"
+        name: crumb
+        widget: string
+        required: false
+        hint: "Напр. «Закон №16037-д про ПДВ». Якщо порожньо — береться H1."
+
+      - label: "Дата публікації"
+        name: date
+        widget: datetime
+        date_format: "DD.MM.YYYY"
+        time_format: false
+        format: "YYYY-MM-DD"
+
+      - label: "Дата оновлення"
+        name: updated
+        widget: datetime
+        date_format: "DD.MM.YYYY"
+        time_format: false
+        format: "YYYY-MM-DD"
+        required: false
+
+      - label: "Картинка для соцмереж (необов'язково)"
+        name: image
+        widget: image
+        required: false
+
+      - label: "Чернетка (не публікувати на сайті)"
+        name: draft
+        widget: boolean
+        default: false
+
+      - label: "Текст статті"
+        name: body
+        widget: markdown
+        hint: "Заголовки розділів — «Заголовок 2». Цитата (>) стає виділеним блоком «увага». Таблиці можна вставляти в режимі Markdown."
+
+      - label: "Джерела (посилання на закони, новини)"
+        name: sources
+        widget: list
+        required: false
+        summary: "{{fields.title}}"
+        fields:
+          - { label: "Назва", name: title, widget: string }
+          - { label: "Посилання", name: url, widget: string }
+
+      - label: "Часті запитання (FAQ)"
+        name: faq
+        widget: list
+        required: false
+        summary: "{{fields.q}}"
+        fields:
+          - { label: "Питання", name: q, widget: string }
+          - { label: "Відповідь", name: a, widget: text }

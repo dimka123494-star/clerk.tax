@@ -1,0 +1,15 @@
+# clerk.tax — збірка на Netlify
+# Перед кожним деплоєм build.py генерує статті з адмінки (content/blog/*.md).
+# Python-залежності Netlify ставить сам з requirements.txt.
+[build]
+  publish = "."
+  command = "python3 build.py"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+# Адмінку не індексуємо
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
